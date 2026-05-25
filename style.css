@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #00CED1; 
-  --secondary-color: #FF6B9E;
+  --primary-color: #56c75f; 
+  --secondary-color: #56c75f;
   --background-dark: #0A0A1A;
   --text-color: #E0E0FF;
 }
@@ -39,73 +39,14 @@ body {
 body.home-theme {
   --primary-gradient: from-purple-400;
   --secondary-gradient: to-pink-600;
-  --primary-color: #00CED1; 
-  --secondary-color: #FF6B9E;
+  --primary-color: #56c75f; 
+  --secondary-color: #56c75f;
   --cursor-hue: 180deg; 
 }
-
-body.hacker-theme {
-  --primary-gradient: from-green-500;
-  --secondary-gradient: to-teal-600;
-  --primary-color: #22C55E; 
-  --secondary-color: #2DD4BF;
-  --cursor-hue: 120deg; 
-}
-
-body.rain-theme {
-  --primary-gradient: from-blue-800;
-  --secondary-gradient: to-blue-600;
-  --primary-color: #1E3A8A; 
-  --secondary-color: #2563EB;
-  --cursor-hue: 240deg; 
-}
-
-body.anime-theme {
-  --primary-gradient: from-red-600;
-  --secondary-gradient: to-red-400;
-  --primary-color: #DC2626; 
-  --secondary-color: #F87171;
-  --cursor-hue: 0deg; 
-}
-
-body.car-theme {
-  --primary-gradient: from-yellow-500;
-  --secondary-gradient: to-yellow-300;
-  --primary-color: #EAB308; 
-  --secondary-color: #FACC15;
-  --cursor-hue: 60deg; 
-}
-
 
 .video-background {
   transform: scale(1.02);
 }
-
-
-#hacker-overlay {
-  mix-blend-mode: screen;
-  opacity: 0.7;
-}
-
-#snow-overlay {
-  z-index: 15;
-  opacity: 0.8;
-}
-
-
-.glitch-overlay {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  opacity: 0;
-  z-index: 20;
-  mix-blend-mode: color-dodge;
-}
-
 
 #profile-block, #skills-block {
   transform-style: preserve-3d;
@@ -113,7 +54,6 @@ body.car-theme {
   width: 640px;
   max-width: 90vw;
 }
-
 
 #profile-block.profile-appear {
   animation: slideInFade 1s ease-out forwards;

@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>creeperdothx</title>
+    <title>crimsoncauldron.dev</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
-    
+    <meta content="crimsoncauldron" property="og:title"/>
+    <meta content="that's me" property="og:description"/>
+    <meta content="https://crimsoncauldron.dev/assets/kitty.png" property="og:image"/>
+    <meta content="#0d1117" data-react-helmet="true" name="theme-color"/>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+            font-family: 'SimSun', monospace;
         }
+
 
         body {
             background-color: #000;
@@ -37,6 +42,11 @@
             z-index: 1;
             pointer-events: none;
         }
+
+        .hidden {
+            display: none !important;
+        }
+
         
         .controls {
             position: fixed;
@@ -217,16 +227,8 @@
             margin-bottom: 10px;
         }
 
-        
-        @font-face {
-            font-family: 'Angel Wish';
-            src: url('assets/Angel_wish.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
         #profile-name {
-            font-family: 'Angel Wish', sans-serif;
+            font-family: 'SimSun', monospace;
             font-size: 32px;
             font-weight: bold;
             letter-spacing: 3px;
@@ -450,15 +452,35 @@
         }
 
         #python-bar {
-            background: linear-gradient(90deg, #ff6b6b, #ff9f9f);
+            background: linear-gradient(90deg, #3672cc, #174ea0);
         }
 
-        #cpp-bar {
+        #java-bar {
             background: linear-gradient(90deg, #4facfe, #00f2fe);
         }
 
+        #css3-bar {
+            background: linear-gradient(90deg, #2258eb, #416ee9);
+        }
+
+        #html5-bar {
+            background: linear-gradient(90deg, #ee6516, #b94909);
+        }
+
+        #javascript-bar {
+            background: linear-gradient(90deg, #d8c629, #d8c629);
+        }
+
+        #nodejs-bar {
+            background: linear-gradient(90deg, #4c8547, #3e8b37);
+        }
+
+        #typescript-bar {
+            background: linear-gradient(90deg, #2d79c7, #1d62a7);
+        }
+
         #csharp-bar {
-            background: linear-gradient(90deg, #43e97b, #38f9d7);
+            background: linear-gradient(90deg, #6921dd, #4b14a3);
         }
 
         
@@ -477,7 +499,7 @@
             padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
-            font-family: 'Courier New', monospace;
+            font-family: 'SimSun', monospace;
             font-size: 14px;
             backdrop-filter: blur(5px);
             transition: all 0.3s;
@@ -618,7 +640,7 @@
         }
 
         #start-text {
-            font-family: 'Courier New', monospace;
+            font-family: 'SimSun', monospace;
             font-size: 24px;
             color: #fff;
             text-align: center;
@@ -799,7 +821,6 @@
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Retro+Gaming&display=swap" rel="stylesheet">
 </head>
 <body class="home-theme" onload="initMedia()">
     <div id="start-screen">
@@ -815,7 +836,7 @@
                 </div>
                 <div class="profile-info">
                     <div class="name-and-badges">
-                        <div id="profile-name">creeperdothx</div>
+                        <div id="profile-name">crimson</div>
                         <div class="badge-box">
                             <div class="badge-box-inner">
                                 <div class="badge-group">
@@ -840,14 +861,20 @@
             <div class="profile-footer">
 
                 <div class="social-links">
-                    <a href="https://discord.gg/JuRxP5DZDf" target="_blank">
+                    <a href="https://discord.gg/iidk" target="_blank">
                         <img src="assets/discord.png" alt="Discord" class="social-icon">
                     </a>
-                    <a href="https://github.com/creeperdothx" target="_blank">
+                    <a href="https://t.me/crimsoncauldron" target="_blank">
+                        <img src="assets/telegram.png" alt="Telegram" class="social-icon">
+                    </a>
+                    <a href="https://github.com/iiDk-the-actual" target="_blank">
                         <img src="assets/github.png" alt="GitHub" class="social-icon">
                     </a>
-                    <a href="https://www.youtube.com/@creeperdothx" target="_blank">
+                    <a href="https://www.youtube.com/@iiDk_" target="_blank">
                         <img src="assets/youtube.png" alt="YouTube" class="social-icon">
+                    </a>
+                    <a href="https://drive.iidk.online" target="_blank">
+                        <img src="assets/files.png" alt="Files" class="social-icon">
                     </a>
                 </div>
 
@@ -863,56 +890,102 @@
             </div>
         </div>
 
-
         <div id="skills-block" class="hidden">
             <h2 class="skills-title">Programming Skills</h2>
-            <div class="skill">
-                <div class="skill-name">
-                    <img src="assets/python.png" alt="Python" class="skill-icon">
-                    <span>Python</span>
-                    <span>87%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div id="python-bar" class="skill-bar"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill-name">
-                    <img src="assets/cpp.png" alt="C++" class="skill-icon">
-                    <span>C++</span>
-                    <span>75%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div id="cpp-bar" class="skill-bar"></div>
-                </div>
-            </div>
+
             <div class="skill">
                 <div class="skill-name">
                     <img src="assets/csharp.png" alt="C#" class="skill-icon">
                     <span>C#</span>
-                    <span>80%</span>
+                    <span>100%</span>
                 </div>
                 <div class="skill-bar-container">
                     <div id="csharp-bar" class="skill-bar"></div>
                 </div>
             </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/python.png" alt="Python" class="skill-icon">
+                    <span>Python</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="python-bar" class="skill-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/javascript.png" alt="JavaScript" class="skill-icon">
+                    <span>JavaScript</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="javascript-bar" class="skill-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/typescript.png" alt="TypeScript" class="skill-icon">
+                    <span>TypeScript</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="typescript-bar" class="skill-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/css3.png" alt="CSS3" class="skill-icon">
+                    <span>CSS3</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="css3-bar" class="skill-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/nodejs.png" alt="Node.js" class="skill-icon">
+                    <span>Node.js</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="nodejs-bar" class="skill-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/html5.png" alt="HTML5" class="skill-icon">
+                    <span>HTML5</span>
+                    <span>65%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="html5-bar" class="skill-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <img src="assets/java.png" alt="Java" class="skill-icon">
+                    <span>Java</span>
+                    <span>35%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div id="java-bar" class="skill-bar"></div>
+                </div>
+            </div>
         </div>
 
-
-        <div id="results-button-container" class="hidden">
-            <button id="results-theme">View Results</button>
+        <div id="results-button-container">
+            <button id="results-theme">Programming Skills</button>
             <div id="results-hint" class="hidden">Click again to return to profile</div>
         </div>
-
-
-        <div class="controls">
-            <div id="home-theme" class="theme-button">1</div>
-            <div id="hacker-theme" class="theme-button">2</div>
-            <div id="rain-theme" class="theme-button">3</div>
-            <div id="anime-theme" class="theme-button">4</div>
-            <div id="car-theme" class="theme-button">5</div>
-        </div>
-
 
         <div class="top-controls">
             <div class="volume-control">
@@ -921,37 +994,15 @@
                 </svg>
                 <input id="volume-slider" class="slider" type="range" min="0" max="1" step="0.01" value="0.3">
             </div>
-            <div class="transparency-control">
-                <svg class="transparency-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                </svg>
-                <input id="transparency-slider" class="slider" type="range" min="0" max="1" step="0.01" value="0.7">
-            </div>
         </div>
     </div>
 
 
     <audio id="background-music" loop>
-        <source src="assets/background_music.mp3" type="audio/mp3">
+        <source type="audio/mp3">
     </audio>
-    <audio id="hacker-music" loop muted>
-        <source src="assets/hacker_music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="rain-music" loop muted>
-        <source src="assets/rain_music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="anime-music" loop muted>
-        <source src="assets/anime_music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="car-music" loop muted>
-        <source src="assets/car_music.mp3" type="audio/mp3">
-    </audio>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-
     <script src="script.js"></script>
 </body>
 </html>

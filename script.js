@@ -4,18 +4,11 @@ function initMedia() {
   console.log("initMedia called");
   const backgroundMusic = document.getElementById('background-music');
   backgroundMusic.src = `assets/background_music${Math.floor(Math.random() * 3)}.mp3`;
-  const backgroundVideo = document.getElementById('background');
-  if (!backgroundMusic || !backgroundVideo) {
+  if (!backgroundMusic) { 
     console.error("Media elements not found");
     return;
   }
   backgroundMusic.volume = 0.3;
-  backgroundVideo.muted = true; 
-
-  
-  backgroundVideo.play().catch(err => {
-    console.error("Failed to play background video:", err);
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,21 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsButton = document.getElementById('results-theme');
   const volumeIcon = document.getElementById('volume-icon');
   const volumeSlider = document.getElementById('volume-slider');
-  const transparencySlider = document.getElementById('transparency-slider');
-  const backgroundVideo = document.getElementById('background');
-  const hackerOverlay = document.getElementById('hacker-overlay');
-  const snowOverlay = document.getElementById('snow-overlay');
   const glitchOverlay = document.querySelector('.glitch-overlay');
   const profileBlock = document.getElementById('profile-block');
   const skillsBlock = document.getElementById('skills-block');
   const pythonBar = document.getElementById('python-bar');
-  const cppBar = document.getElementById('cpp-bar');
+  const javaBar = document.getElementById('java-bar');
+  const cssBar = document.getElementById('css3-bar');
+  const htmlBar = document.getElementById('html5-bar');
+  const javascriptBar = document.getElementById('javascript-bar');
+  const nodejsBar = document.getElementById('nodejs-bar');
+  const typescriptBar = document.getElementById('typescript-bar');
   const csharpBar = document.getElementById('csharp-bar');
   const resultsHint = document.getElementById('results-hint');
   const profilePicture = document.querySelector('.profile-picture');
   const profileContainer = document.querySelector('.profile-container');
-  const socialIcons = document.querySelectorAll('.social-icon');
-  const badges = document.querySelectorAll('.badge');
 
   const startMessages = ["click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple"];
   const startMessage = startMessages[Math.floor(Math.random() * startMessages.length)];
@@ -55,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startTextContent = startMessage.slice(0, startIndex + 1);
       startIndex++;
     }
-    startText.textContent = startTextContent + (startCursorVisible ? '|' : ' ');
+    startText.textContent = startTextContent + (startCursorVisible ? '|' : ' ');
     setTimeout(typeWriterStart, 100);
   }
 
@@ -70,8 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     totalVisitors = Math.floor(Math.random() * 900000) + 100000;
     visitorCount.textContent = totalVisitors.toLocaleString();
   }
-}
-
+  
   initializeVisitorCounter();
 
   setInterval(initializeVisitorCounter, 10);
@@ -90,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         profileContainer.classList.add('orbit');
       }}
     );
-
+    
     typeWriterName();
     typeWriterBio();
   });
@@ -116,7 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  const name = "creeperdothx";
+  const names = [
+    "crimson"
+  ];
+  let name = names[Math.floor(Math.random() * names.length)];
   let nameText = '';
   let nameIndex = 0;
   let isNameDeleting = false;
@@ -131,34 +125,41 @@ document.addEventListener('DOMContentLoaded', () => {
       nameIndex--;
     } else if (nameIndex === name.length) {
       isNameDeleting = true;
-      setTimeout(typeWriterName, 2000);
+      // setTimeout(typeWriterName, 2000);
       return;
     } else if (nameIndex === 0) {
       isNameDeleting = false;
+      name = names[Math.floor(Math.random() * names.length)];
     }
-    profileName.textContent = nameText + (nameCursorVisible ? '|' : ' ');
+    profileName.textContent = nameText + (nameCursorVisible ? '|' : ' ');
     if (Math.random() < 0.1) {
       profileName.classList.add('glitch');
       setTimeout(() => profileName.classList.remove('glitch'), 200);
     }
-    setTimeout(typeWriterName, isNameDeleting ? 150 : 50);
+    setTimeout(typeWriterName, isNameDeleting ? 50 : Math.floor(Math.random() * 101) + 30);
   }
 
   setInterval(() => {
     nameCursorVisible = !nameCursorVisible;
-    profileName.textContent = nameText + (nameCursorVisible ? '|' : ' ');
+    profileName.textContent = nameText + (nameCursorVisible ? '|' : ' ');
   }, 500);
 
 
   const bioMessages = [
-    "Founder of Jello Software",
-    "Contacting the Mothership",
-    "hostdothx.vercel.app",
-    "I <3 mint"
+    "i don't have a brother",
+
+    "i support mostly everyone",
+    "never underestimate yourself",
+    "contacting the mothership",
+
+    "i <3 debian",
+    "i hate typescript",
+
+    "admin@goldentrophy.software"
   ];
   let bioText = '';
   let bioIndex = 0;
-  let bioMessageIndex = 0;
+  let bioMessageIndex = Math.floor(Math.random() * bioMessages.length);
   let isBioDeleting = false;
   let bioCursorVisible = true;
 
@@ -171,19 +172,23 @@ document.addEventListener('DOMContentLoaded', () => {
       bioIndex--;
     } else if (bioIndex === bioMessages[bioMessageIndex].length) {
       isBioDeleting = true;
-      setTimeout(typeWriterBio, 1000);
+      setTimeout(typeWriterBio, 2000);
       return;
     } else if (bioIndex === 0 && isBioDeleting) {
       isBioDeleting = false;
-      bioMessageIndex = (bioMessageIndex + 1) % bioMessages.length;
+      bioMessageIndex = Math.floor(Math.random() * bioMessages.length);
     }
+
     profileBio.textContent = bioText + (bioCursorVisible ? '|' : ' ');
+
     if (Math.random() < 0.1) {
       profileBio.classList.add('glitch');
       setTimeout(() => profileBio.classList.remove('glitch'), 200);
     }
-    setTimeout(typeWriterBio, isBioDeleting ? 75 : 150);
-  }
+
+    setTimeout(typeWriterBio, isNameDeleting ? 20 : Math.floor(Math.random() * 101) + 30);
+}
+
 
   setInterval(() => {
     bioCursorVisible = !bioCursorVisible;
@@ -295,14 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  profilePicture.addEventListener('mouseenter', () => {
-    glitchOverlay.style.opacity = '1';
-    setTimeout(() => {
-      glitchOverlay.style.opacity = '0';
-    }, 500);
-  });
-
-
   profilePicture.addEventListener('click', () => {
     profileContainer.classList.remove('fast-orbit');
     profileContainer.classList.remove('orbit');
@@ -344,9 +341,14 @@ document.addEventListener('DOMContentLoaded', () => {
             { x: 100, opacity: 0 },
             { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
           );
-          gsap.to(pythonBar, { width: '87%', duration: 2, ease: 'power2.out' });
-          gsap.to(cppBar, { width: '75%', duration: 2, ease: 'power2.out' });
-          gsap.to(csharpBar, { width: '80%', duration: 2, ease: 'power2.out' });
+          gsap.to(pythonBar, { width: '95%', duration: 2, ease: 'power2.out' });
+          gsap.to(javaBar, { width: '35%', duration: 2, ease: 'power2.out' });
+          gsap.to(cssBar, { width: '70%', duration: 2, ease: 'power2.out' });
+          gsap.to(htmlBar, { width: '65%', duration: 2, ease: 'power2.out' });
+          gsap.to(javascriptBar, { width: '75%', duration: 2, ease: 'power2.out' });
+          gsap.to(nodejsBar, { width: '70%', duration: 2, ease: 'power2.out' });
+          gsap.to(typescriptBar, { width: '75%', duration: 2, ease: 'power2.out' });
+          gsap.to(csharpBar, { width: '100%', duration: 2, ease: 'power2.out' });
         }
       });
       resultsHint.classList.remove('hidden');
@@ -386,9 +388,14 @@ document.addEventListener('DOMContentLoaded', () => {
             { x: 100, opacity: 0 },
             { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
           );
-          gsap.to(pythonBar, { width: '87%', duration: 2, ease: 'power2.out' });
-          gsap.to(cppBar, { width: '75%', duration: 2, ease: 'power2.out' });
-          gsap.to(csharpBar, { width: '80%', duration: 2, ease: 'power2.out' });
+          gsap.to(pythonBar, { width: '95%', duration: 2, ease: 'power2.out' });
+          gsap.to(javaBar, { width: '35%', duration: 2, ease: 'power2.out' });
+          gsap.to(cssBar, { width: '70%', duration: 2, ease: 'power2.out' });
+          gsap.to(htmlBar, { width: '65%', duration: 2, ease: 'power2.out' });
+          gsap.to(javascriptBar, { width: '75%', duration: 2, ease: 'power2.out' });
+          gsap.to(nodejsBar, { width: '70%', duration: 2, ease: 'power2.out' });
+          gsap.to(typescriptBar, { width: '75%', duration: 2, ease: 'power2.out' });
+          gsap.to(csharpBar, { width: '100%', duration: 2, ease: 'power2.out' });
         }
       });
       resultsHint.classList.remove('hidden');
