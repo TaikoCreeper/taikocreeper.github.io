@@ -2,7 +2,7 @@ let hasUserInteracted = false;
 
 function initMedia() {
   console.log("initMedia called");
-  const backgroundMusic = document.getElementById('background-music');
+  const backgroundMusic = document.getElementById('background_music');
   const backgroundVideo = document.getElementById('background');
   if (!backgroundMusic || !backgroundVideo) {
     console.error("Media elements not found");
