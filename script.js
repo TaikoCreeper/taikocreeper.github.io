@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const names = [
-    "crimson"
+    "creeperdothx"
   ];
   let name = names[Math.floor(Math.random() * names.length)];
   let nameText = '';
@@ -146,16 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const bioMessages = [
-    "i don't have a brother",
-
     "i support mostly everyone",
     "never underestimate yourself",
     "contacting the mothership",
-
-    "i <3 debian",
-    "i hate typescript",
-
-    "admin@goldentrophy.software"
+    "founder of jello software",
+    "i <3 mint",
+    "i hate typescript"
   ];
   let bioText = '';
   let bioIndex = 0;
