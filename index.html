@@ -15,23 +15,6 @@
             font-family: 'Courier New', monospace;
         }
 
-        
-        .custom-cursor {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            background: url('assets/custom_cursor.png') no-repeat center center;
-            background-size: contain;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-        }
-
-        
-        body:not(.touch-device) {
-            cursor: none;
-        }
-
         body {
             background-color: #000;
             color: #fff;
@@ -54,33 +37,6 @@
             z-index: 1;
             pointer-events: none;
         }
-
-        .glitch-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        #hacker-overlay, #snow-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
         
         .controls {
             position: fixed;
