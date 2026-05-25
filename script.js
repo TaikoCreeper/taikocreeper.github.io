@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const socialIcons = document.querySelectorAll('.social-icon');
   const badges = document.querySelectorAll('.badge');
 
-  const startMessage = "click here to see greatness", "click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple";
+  const startMessage = ["click here to see greatness", "click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple"];
+  const startMessage = startMessages[Math.floor(Math.random() * startMessages.length)];
   let startTextContent = '';
   let startIndex = 0;
   let startCursorVisible = true;
