@@ -45,49 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const socialIcons = document.querySelectorAll('.social-icon');
   const badges = document.querySelectorAll('.badge');
 
-  
-  const cursor = document.querySelector('.custom-cursor');
-  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-
-  if (isTouchDevice) {
-    document.body.classList.add('touch-device');
-    
-    document.addEventListener('touchstart', (e) => {
-      const touch = e.touches[0];
-      cursor.style.left = touch.clientX + 'px';
-      cursor.style.top = touch.clientY + 'px';
-      cursor.style.display = 'block';
-    });
-
-    document.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      cursor.style.left = touch.clientX + 'px';
-      cursor.style.top = touch.clientY + 'px';
-      cursor.style.display = 'block';
-    });
-
-    document.addEventListener('touchend', () => {
-      cursor.style.display = 'none'; 
-    });
-  } else {
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      cursor.style.display = 'block';
-    });
-
-    document.addEventListener('mousedown', () => {
-      cursor.style.transform = 'scale(0.8) translate(-50%, -50%)';
-    });
-
-    document.addEventListener('mouseup', () => {
-      cursor.style.transform = 'scale(1) translate(-50%, -50%)';
-    });
-  }
-
-
-  const startMessage = "Click here to see greatness";
+  const startMessage = "click here to see greatness", "click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple";
   let startTextContent = '';
   let startIndex = 0;
   let startCursorVisible = true;
@@ -109,13 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function initializeVisitorCounter() {
-    let totalVisitors = localStorage.getItem('totalVisitorCount');
-    if (!totalVisitors) {
-      totalVisitors = 921234;
-      localStorage.setItem('totalVisitorCount', totalVisitors);
-    } else {
-      totalVisitors = parseInt(totalVisitors);
-    }
+    totalVisitors = Math.floor(Math.random() * 900000) + 100000;
+    visitorCount.textContent = totalVisitors.toLocaleString();
+  }
 
     const hasVisited = localStorage.getItem('hasVisited');
     if (!hasVisited) {
