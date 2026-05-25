@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const profileBio = document.getElementById('profile-bio');
   const visitorCount = document.getElementById('visitor-count');
   const backgroundMusic = document.getElementById('background-music');
-  const resultsButtonContainer = document.getElementById('results-button-container');
   const resultsButton = document.getElementById('results-theme');
   const volumeIcon = document.getElementById('volume-icon');
   const volumeSlider = document.getElementById('volume-slider');
@@ -45,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const socialIcons = document.querySelectorAll('.social-icon');
   const badges = document.querySelectorAll('.badge');
 
-  const startMessage = "click here to see greatness"
+  const startMessages = ["click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple"];
+  const startMessage = startMessages[Math.floor(Math.random() * startMessages.length)];
   let startTextContent = '';
   let startIndex = 0;
   let startCursorVisible = true;
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(() => {
     startCursorVisible = !startCursorVisible;
-    startText.textContent = startTextContent + (startCursorVisible ? '|' : ' ');
+    startText.textContent = startTextContent + (startCursorVisible ? '|' : ' ');
   }, 500);
 
 
@@ -70,20 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     totalVisitors = Math.floor(Math.random() * 900000) + 100000;
     visitorCount.textContent = totalVisitors.toLocaleString();
   }
-
-    const hasVisited = localStorage.getItem('hasVisited');
-    if (!hasVisited) {
-      totalVisitors++;
-      localStorage.setItem('totalVisitorCount', totalVisitors);
-      localStorage.setItem('hasVisited', 'true');
-    }
-
-    visitorCount.textContent = totalVisitors.toLocaleString();
-  }
-
+}
 
   initializeVisitorCounter();
 
+  setInterval(initializeVisitorCounter, 10);
 
   startScreen.addEventListener('click', () => {
     startScreen.classList.add('hidden');
@@ -99,18 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         profileContainer.classList.add('orbit');
       }}
     );
-    if (!isTouchDevice) {
-      try {
-        new cursorTrailEffect({
-          length: 10,
-          size: 8,
-          speed: 0.2
-        });
-        console.log("Cursor trail initialized");
-      } catch (err) {
-        console.error("Failed to initialize cursor trail effect:", err);
-      }
-    }
+
     typeWriterName();
     typeWriterBio();
   });
@@ -130,18 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         profileContainer.classList.add('orbit');
       }}
     );
-    if (!isTouchDevice) {
-      try {
-        new cursorTrailEffect({
-          length: 10,
-          size: 8,
-          speed: 0.2
-        });
-        console.log("Cursor trail initialized");
-      } catch (err) {
-        console.error("Failed to initialize cursor trail effect:", err);
-      }
-    }
+
     typeWriterName();
     typeWriterBio();
   });
