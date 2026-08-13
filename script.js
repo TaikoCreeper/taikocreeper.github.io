@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const profilePicture = document.querySelector('.profile-picture');
   const profileContainer = document.querySelector('.profile-container');
 
-  const startMessages = ["click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple"];
+  const startMessages = ["click to view", "click to stalk", "click just because", "click to come inside", "click to visualize", "click to unlock", "click to feast", "click to open the door", "click to gently open the door", "click to sprint", "click to jump", "click to say apple", "click to meet ralsei"];
   const startMessage = startMessages[Math.floor(Math.random() * startMessages.length)];
   let startTextContent = '';
-  let startIndex = 0;
+  let startIndex = 0;                                                                
   let startCursorVisible = true;
 
   function typeWriterStart() {
@@ -108,7 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const names = [
-    "creeperdothx"
+    "TaikoCreeper",
+    "Creeper",
+    "Ralsei",
+    "ラルセイ"
   ];
   let name = names[Math.floor(Math.random() * names.length)];
   let nameText = '';
@@ -148,10 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const bioMessages = [
     "i support mostly everyone",
     "never underestimate yourself",
-    "contacting the mothership",
-    "founder of jello software",
-    "i <3 mint",
-    "i hate typescript"
+    "contacting tricky tony",
+    "i like music",
+    "i <3 cachyos",
+    "an official kralsei fan",
+    "ralsei is my fluffy boi",
+    "crimsoncauldron a cool guy",
+    "taiko no tatsujin is an underrated game"
   ];
   let bioText = '';
   let bioIndex = 0;
@@ -168,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bioIndex--;
     } else if (bioIndex === bioMessages[bioMessageIndex].length) {
       isBioDeleting = true;
-      setTimeout(typeWriterBio, 2000);
+      setTimeout(typeWriterBio, 2500);
       return;
     } else if (bioIndex === 0 && isBioDeleting) {
       isBioDeleting = false;
